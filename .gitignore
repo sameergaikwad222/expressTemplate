@@ -1,0 +1,5 @@
+node_modules
+#commenting config since this is template & i need this basic config whenever i need to start from scratch
+# config
+*.log
+.vscode
