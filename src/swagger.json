@@ -1,0 +1,230 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Express Template API",
+    "description": "This API is just Express Template Project",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health Route",
+        "description": "Use this route for health checks",
+        "responses": {
+          "200": {
+            "description": "Successfull Operation",
+            "content": {
+              "application-json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/{id}": {
+      "get": {
+        "summary": "Get Single Resource Route",
+        "description": "Use this route for getting **individual Resource**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Resource unique ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull Operation",
+            "content": {
+              "application-json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Resource"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Single Resource Route Update",
+        "description": "Use this route for updating  **individual Resource**",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Resource unique ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application-json": {
+              "schema": {
+                "$ref": "#/components/schemas/Resource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfull Operation",
+            "content": {
+              "application-json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Resource"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resource/multiple": {
+      "get": {
+        "summary": "Multiple Resource Route",
+        "description": "Use this route for getting **Multiple Resources**",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application-json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Resource"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Multiple Resource Route",
+        "description": "Use this route for Creating **Multiple Resources**",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application-json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "resources": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Resource"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application-json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Resource"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Resource": {
+        "type": "object",
+        "properties": {
+          "prop1": {
+            "type": "string"
+          },
+          "prop2": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "ResourceBody": {
+        "description": "Resource Request Body Schema",
+        "required": true,
+        "content": {
+          "application-json": {
+            "schema": {
+              "$ref": "#/components/schemas/Resource"
+            }
+          }
+        }
+      }
+    }
+  }
+}
