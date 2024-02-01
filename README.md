@@ -8,6 +8,7 @@ This is a Base template for Node Express & Mongoose Projects.
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Swagger Docs](#Swagger API Docs)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -32,20 +33,25 @@ List the key features of your project. This could include:
 To get started with this template project, follow these simple steps:
 
 1. Clone the repository:
- ```bash
- git clone https://github.com/sameergaikwad222/expressTemplate.git 
+
+```bash
+git clone https://github.com/sameergaikwad222/expressTemplate.git
 ```
+
 2. Install dependencies:
- ```bash
+
+```bash
 cd expressTemplate
 npm install
 ```
 
 3.Configure MongoDB:
+
 - Create a MongoDB Atlas account (or use a local MongoDB instance).
 - Update the MongoDB connection string & database name in the config/dbConfig.json file.
 
-4.Start the development server:
+  4.Start the development server:
+
 ```bash
 npm start
 ```
@@ -55,12 +61,21 @@ Your app, now integrated with MongoDB, will be accessible at [http://localhost:3
 Always confirm health of server on [http://localhost:3000/health](http://localhost:3000/health)
 
 ## Usage
+
 Explore the project structure and leverage the MongoDB integration to build features that involve data storage. Customize routes, add controllers, and extend the project to meet the requirements of your specific application.
 
+## Swagger Docs
+
+Explore API through Swagger API Documentation. You can find model schema details, various Endpoint details through this API documentation.
+Please follow the swagger endpoint as follows.
+http://localhost:3000/api-docs
+
 ## Contributing
+
 If you find issues or have suggestions for improvements, feel free to contribute! Follow the guidelines in the Contributing documentation.
 
 ## License
+
 This project is licensed under the MIT License. Feel free to use it as a base for your projects.
 
 This addition highlights the MongoDB integration and how developers can leverage it within the project. Update the MongoDB connection details based on your specific setup and requirements.
