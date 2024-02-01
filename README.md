@@ -8,7 +8,7 @@ This is a Base template for Node Express & Mongoose Projects.
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Swagger Docs](#Swagger API Docs)
+- [Swagger Docs](#swagger)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -64,7 +64,7 @@ Always confirm health of server on [http://localhost:3000/health](http://localho
 
 Explore the project structure and leverage the MongoDB integration to build features that involve data storage. Customize routes, add controllers, and extend the project to meet the requirements of your specific application.
 
-## Swagger Docs
+## Swagger
 
 Explore API through Swagger API Documentation. You can find model schema details, various Endpoint details through this API documentation.
 Please follow the swagger endpoint as follows.
