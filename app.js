@@ -8,6 +8,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./src/swagger.json");
+const { logger } = require("./src/middlewares/customMiddlewares");
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -15,11 +16,11 @@ async function initApp() {
   const PORT = config?.port || 3000;
   try {
     await connectMongoDB();
-
     // Middlewares
     app.use(express.json());
     app.use(helmet());
     app.use(cors());
+    app.use(logger);
 
     // Routers
     app.use("/resource", resourceRouter);

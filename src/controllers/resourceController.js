@@ -138,7 +138,7 @@ async function handleUpdateSingleResource(req, res) {
   }
 
   const updateObj = req.body;
-  if (!updateObj) {
+  if (!updateObj || updateObj == {}) {
     return res.status(constants.status.code.BAD_REQUEST).json({
       status: "failed",
       message: "Bad Request",
